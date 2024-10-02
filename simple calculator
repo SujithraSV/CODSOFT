@@ -1,0 +1,79 @@
+//SIMPLE CALCULATOR
+/*Develop a calculator program that performs basic arithmetic
+operations such as addition, subtraction, multiplication, and
+division. Allow the user to input two numbers and choose an
+operation to perform.*/
+#include <iostream>
+using namespace std;
+float add(float n1,float n2);
+float sub(float n1,float n2);
+float mul(float n1,float n2);
+float divide(float n1,float n2);
+int main()
+{
+	float n1,n2,result;
+	char op;
+	cout<<"============================================================="<<endl;
+	cout<<"\t\t *SIMPLE CALCULATOR*"<<endl;
+	cout<<"============================================================="<<endl;
+	cout<<"Enter any two values to be calculated=";
+	cin>>n1>>n2;
+	cout<<"Choose an operation to be performed(+,-,*,/)=";
+	cin>>op;
+	switch(op)
+	{
+	case '+':
+		//add(n1,n2);
+		//result=n1+n2;
+		cout<<"\n*************************************************************"<<endl;
+		cout<<"\t \tANSWER="<<"\""""<<add(n1,n2)<<"\""""<<endl;
+		cout<<"*************************************************************"<<endl;
+		break;
+	case '-':
+		cout<<"\n*************************************************************"<<endl;
+		cout<<"\t \tANSWER="<<"\""""<<sub(n1,n2)<<"\""""<<endl;
+		cout<<"*************************************************************"<<endl;
+		break;
+	case '*':
+		//mul(n1,n2);
+		cout<<"\n*************************************************************"<<endl;
+		cout<<"\t \tANSWER="<<"\""""<<mul(n1,n2)<<"\""""<<endl;
+		cout<<"*************************************************************"<<endl;
+		break;
+	case '/':
+		//divide(n1,n2);
+		cout<<"\n*************************************************************"<<endl;
+		cout<<"\t \tANSWER="<<"\""""<<divide(n1,n2)<<"\""""<<endl;
+		cout<<"*************************************************************"<<endl;
+		break;
+	default:
+		cout<<"\nSorry!you entered wrong operation..Try Again.."<<endl;
+		break;
+	}
+
+	return 0;
+}
+float add(float n1,float n2)
+{
+	float result=n1+n2;
+	// ans=(n1+n2);
+	return result;
+}
+float sub(float n1,float n2)
+{
+	float result;
+	//result=n1-n2;
+	return n1-n2;
+}
+float mul(float n1,float n2)
+{
+	float result;
+	result=n1*n2;
+	return result;
+}
+float divide(float n1,float n2)
+{
+	float result;
+	result=n1/n2;
+	return result;
+}
