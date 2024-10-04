@@ -16,10 +16,6 @@ high or too low until the user guesses the correct number.
   Build a simple console-based Tic-Tac-Toe game that
 allows two players to play against each other
 
-TASK 3
-
-TIC-TAC-TOE GAME
-
 4. **TO-DO LIST**  
    Build a simple console-based to-do list manager that allows users to add, view, and delete tasks.
    
