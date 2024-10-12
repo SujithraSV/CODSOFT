@@ -1,0 +1,116 @@
+#include<iostream>
+using namespace std;
+void print_board(char board[3][3]);
+bool winner(char board[3][3],char player);
+
+int main()
+{
+    start:
+    cout<<"=============================================================================================="<<endl;
+    cout<<"\t \t \t TIC TAC TOE \n";
+    cout<<"=============================================================================================="<<endl;
+    char board[3][3]={{' ',' ',' '},
+                      {' ',' ',' '},
+                      {' ',' ',' '}};
+    char player='X';
+    int r,c;
+    int rep;
+    for(int rep=0;rep<9;rep++)
+    {
+        print_board(board);
+        while(true)
+        {
+        cout<<"PLAYER: "<<player<<endl;
+        cout<<"Enter the position ==>rows(0 to 2) & columns(0 to 2)=";
+        cin>>r>>c;
+        board[r][c];
+        if(r==2||r==0||r==1)
+        {
+            if(c==2||c==0||c==1)
+            {
+                cout<<"valid \n";
+                //print_board(board);    
+            }
+           // break;
+        }
+        else if(board[r][c]==' '|| r<0|| r>0 || c<0 || c>0)
+        {
+            cout<<"invalid input. try again!"<<endl;
+        }
+        else
+        {
+            cout<<"invalid input"<<endl;
+        }
+        board[r][c] = player;
+        print_board(board); 
+        if(winner(board, player)) 
+        { 
+          print_board(board);
+          cout<<"___________________________________________________________"<<endl; 
+          cout << "Congradulations Player " << player << " ,you won!\n"; 
+          cout<<"___________________________________________________________"<<endl;
+          break; 
+        } 
+   
+        if(player=='O')
+        {
+           player='X';
+        }
+        else
+        {
+           player='O';
+        } 
+        }
+  
+    // End of the game 
+    print_board(board); 
+  
+    // Check for a draw 
+    if (rep==9 && !winner(board,'X') && !winner(board,'O')) 
+    { 
+        cout << "It's a draw!\n"; 
+    } 
+    cout<<"*****************GAME ENDS******************"<<endl;
+    char ans;
+    cout<<"Do you want to play again?(YES=1 or NO=0)"<<endl;
+    cin>>ans;
+    if(ans=='1')
+    {
+        goto start;
+    }
+    else
+    {
+        cout<<"\t \t *THANKS FOR PLAYING*\n"<<endl;
+        cout<<"_______________________________________________________________________________________________"<<endl;
+    }
+    return 0;
+    }
+}
+void print_board(char board[3][3])
+{
+    for(int i=0;i<3;i++)
+    {
+        for(int j=0;j<3;j++)
+        {
+            cout<<board[i][j]<<"|";
+            
+        }
+        cout<<"\n";
+        cout<<"----------\n";
+    }
+}
+bool winner(char board[3][3],char player)
+{
+    for (int i = 0; i < 3; i++)
+    { //00 01 02 00 10 20
+        if (board[i][0]==player&&board[i][1]==player&&board[i][2] == player) 
+            return true; 
+        if (board[0][i] == player && board[1][i] == player&&board[2][i] == player) 
+            return true; 
+    } 
+    if (board[0][0]==player&& board[1][1]==player && board[2][2]==player) 
+        return true; 
+    if (board[0][2]==player && board[1][1]==player && board[2][0]==player) 
+        return true; 
+    return false; 
+}
