@@ -16,12 +16,6 @@ high or too low until the user guesses the correct number.
   Build a simple console-based Tic-Tac-Toe game that
 allows two players to play against each other
 
-4. **TO-DO LIST**  
-   Build a simple console-based to-do list manager that allows users to add, view, and delete tasks.
-   
-5. **IMAGE PROCESSING TOOL**  
-   Build a tool that allows users to perform various image processing operations
-
 like resizing, cropping, and filtering.
 ## 🚀 **Skills Developed**
 Throughout the completion of these tasks, I have developed and enhanced several skills, including:
