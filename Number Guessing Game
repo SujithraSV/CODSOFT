@@ -1,0 +1,121 @@
+/*randomNumber = (rand() % (upper-lower) + 1)
+To generate different random numbers each time the program runs
+srand(time(0))*/
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+using namespace std;
+int main()
+{
+    start:
+    int random_number,guess_num,n;
+    
+    int low=random_number-10;
+    
+    int high=random_number+10;
+    cout<<"====================================================================================="<<endl;
+    cout<<"\t \t random number guessing game"<<endl;
+    cout<<"====================================================================================="<<endl;
+    random_number=(rand()%(50-1)+1);
+    cout<<"How many times do you want to try : ";
+    cin>>n;
+    char ans;
+        cout<<"Do you want any clue?(YES=1;NO=0) =";
+        cin>>ans;
+        if(ans=='1')
+        {
+            cout<<"*The range is between 1 to 50"<<endl;
+           // break;
+        }
+        else
+        {
+            cout<<"**All The Best!**"<<endl;
+           // break;
+        }
+    for(int i=0;i<n;i++)
+    {
+    cout<<"\nEnter the guessed number=";
+    cin>>guess_num;
+    if(guess_num==random_number)
+    {
+        char ans;
+        cout<<"Congrats,you guessed it right!"<<endl;
+        cout<<"Do you want to play again?(YES=1;NO=0) = ";
+        cin>>ans;
+        if(ans=='1')
+        {
+            goto start;
+        }
+        else
+        {
+            break;
+        }
+        break;
+    }
+    else if(guess_num<random_number)
+    {
+        if(guess_num>=low)
+        {
+            cout<<"the guess is little low"<<endl;
+        }
+        else
+        {
+            cout<<"your guess is too low"<<endl;
+        }
+    }
+    else if(guess_num>random_number)
+    {
+        if(guess_num<=high)
+        {
+            cout<<"the guess is little high"<<endl;
+           
+        }
+        else
+        {
+            cout<<"your guess is too high"<<endl;
+        }
+    }
+    else
+    {
+       cout<<"invalid input ...try again!"<<endl;
+    }
+    }
+    //char ans;
+    cout<<"Do you want to know the answer?(YES=1;NO=0) =";
+    cin>>ans;
+    if(ans=='1')
+    {
+        cout<<"****The random number is ="<<random_number<<"****"<<endl;
+        cout<<"__________________________________________________________________________________________"<<endl;
+        cout<<"Do you want to play again?(YES=1;NO=0)=";
+        cin>>ans;
+        if(ans=='1')
+        {
+           goto start;
+        }
+        else
+        {
+            cout<<"thanks for playing";
+            //break;
+        }
+    }
+    else
+    {
+        cout<<"Do you want to play again?(YES=1;NO=0)=";
+        cin>>ans;
+        if(ans=='1')
+        {
+           goto start;
+        }
+        else
+        {
+            cout<<"thanks for playing";
+            //break;
+        }
+            
+    }
+    cout<<"\n__________________________________________________________________________________________"<<endl;
+    cout<<"\t\t\t**GAME ENDS**\n";
+    cout<<"__________________________________________________________________________________________"<<endl;
+    return 0;
+}
